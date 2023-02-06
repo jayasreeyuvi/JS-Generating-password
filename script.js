@@ -23,23 +23,26 @@ function generatePassword() {
   }
 
  
+  if (upperCase) {
+    selectedArray = selectedArray.concat(upperCaseSet);
+  }
+  if (lowerCase) {
+    selectedArray = selectedArray.concat(lowerCaseSet);
+  }
+  var passwordString = "";
 
-  if(isuppercase){
-    finalPassword += uppercase
+  for (var i = 0; i < passwordLength; i++){
+    passwordString += selectedArray[Math.floor(Math.random() * (selectedArray.length))];
   }
-  if(islowercase){
-    finalPassword += lowercase
-  }
-  if(num){
-    finalPassword += numbers
+  return passwordString;
+}
+function getPasswordLength() {
+  var userChoice = 0 ;
+  while ((userChoice < 8) || (userChoice > 128)) {
+    userChoice = parseInt(window.prompt("what is the desired length of your password?should be between 8 and 128?"));
     
   }
-  if(spe){
-    finalPassword += special
-  }
-
-  return finalPassword 
- 
+  return userChoice;
 }
 
 // Write password to the #password input
