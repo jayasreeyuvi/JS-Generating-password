@@ -1,31 +1,27 @@
-// Assignment Code
+// Assignment code here
 
-var generateBtn = document.querySelector("#generate");
-
-function generatePassword()
-{
+function generatePassword() {
   
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  var lowercase ="abcdefghijklmnopqrstuvwxyz"
-  var numbers = "0123456789"
-  var special = "!@#$%^&*"
-   
-  var finalPassword = ""
- 
+  var upperCaseSet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  var lowerCaseSet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  // var numbSet = ["0","1","2","3","4","5","6","7","8","9"];
+  // var specialSet = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "?", "/", "-", ":", ";", "[", "]", "{", "}", ".", "<", ">", "=", "_", "`", "|", "~"];
+  var selectedArray = [];
 
-  var passwordLenght = prompt("what is the desired lenght of your password?should between 8 and 128?")  
-  
+  var passwordLength = getPasswordLength();
+  var charTypeselected = false;
 
-  if(passwordLenght <8 || passwordLenght>128){
-    alert("that lenghtis not valid,please choose a number  between 8 and 128. try again")
+  while (charTypeselected == false) {
+    var upperCase = getChoice("uppercase");
+    var lowerCase = getChoice("lowercase");
+    if ((upperCase) || (lowerCase)) {
+      charTypeselected = true;
+      
+    } else {
+      window.alert(" Select at least one charactor type. ")
+    }
   }
-  
 
-  var isuppercase = confirm("Do you want uppercase characters?")
-  var islowercase = confirm("Do you want lowercase characters?")
-  var num = confirm("Do you want numbers characters ?")
-  var spe = confirm("Do you want special characters?")
-  
  
 
   if(isuppercase){
