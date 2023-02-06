@@ -45,17 +45,38 @@ function getPasswordLength() {
   return userChoice;
 }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+function getChoice(currentOption) {
+  var userChoice = "a",
+  messagePrompt = "";
+  var messagePrompt = ('like to '.concat(currentOption));
+  messagePrompt = messagePrompt.concat('characters (y/n)?');
+  while (userChoice = "a") {
+    userChoice = (window.prompt(messagePrompt));
+    userChoice = userChoice.toLowerCase();
+    if(userChoice == "y"){
+      return true;
+    
+    }else if (userChoice == "n") {
+      return false;
+    }
+    
+  }
   
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+var generateBtn = document.querySelector("#generate");
+ 
+ // Write password to the #password input
+ function writePassword() {
+   var password = generatePassword();
+   var passwordText = document.querySelector("#password");
+ 
+   passwordText.value = password;
+ 
+ }
+ 
+ // Add event listener to generate button
+ generateBtn.addEventListener("click", writePassword);
 
 
 
