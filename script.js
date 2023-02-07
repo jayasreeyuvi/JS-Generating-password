@@ -18,7 +18,7 @@ function generatePassword() {
       charTypeselected = true;
       
     } else {
-      window.alert(" Select at least one charactor type. ")
+      window.alert(" Select at least one charactor type ")
     }
   }
 
